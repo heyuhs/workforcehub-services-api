@@ -1,0 +1,4 @@
+payoutDate,employeeEmail,fixedAmount,variableAmount,deductions
+2024-03-01,john.doe@example.com,1000,500,50
+2024-03-01,jane.smith@example.com,1200,600,70
+2024-03-01,bob.jones@example.com,900,400,30
