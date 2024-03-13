@@ -1,15 +1,30 @@
 const { ObjectId } = require("mongodb");
 
-const createPayoutModel = (db) => {
-  const payoutCollection = db.collection("payouts");
-
-  const createPayout = async (payout) => {
-    return payoutCollection.insertOne(payout);
-  };
-
-  return {
-    createPayout,
-  };
+// Define the Payout data model with data types
+const Payout = {
+  id: ObjectId,
+  payoutDate: Date,
+  fixedAmount: Number,
+  variableAmount: Number,
+  deductions: Number,
 };
 
-module.exports = createPayoutModel;
+// Function to create a new payout
+async function createPayout(db, payoutData) {
+  // Basic validation
+  if (!payoutData.payoutDate || !payoutData.fixedAmount) {
+    throw new Error("Missing mandatory fields in payout data");
+  }
+
+  const payoutCollection = db.collection("payout");
+
+  try {
+    const result = await payoutCollection.insertOne(payoutData);
+    return result;
+  } catch (error) {
+    console.error("Error creating payout:", error);
+    throw error; // Re-throw the error for handling at a higher level
+  }
+}
+
+module.exports = { Payout, createPayout };
