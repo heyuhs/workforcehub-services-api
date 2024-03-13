@@ -8,11 +8,11 @@ WorkForceHub Services is a Node.js application that provides APIs for managing d
 •	Payout Management: Upload payouts using CSV files.\
 •	Query Services: Retrieve various employee-related data using custom queries.
 ## Installation
-1.	Clone the repository:
-2.	Install dependencies: cd WorkForceHub-Services npm install\ 
+1.	Clone the repository: git clone https://github.com/heyuhs/workforcehub-services-api.git
+2.	Install dependencies: cd WorkForceHub-Services npm install 
 3.	Set up MongoDB Atlas:\
 •	Create a MongoDB Atlas cluster.\
-•	Obtain the connection string and update mongo.js with your connection details.\
+•	Obtain the connection string and update mongo.js with your connection details
 4.	Start the server: npm start
 ## Usage
 •	Use Postman or any API client to interact with the endpoints provided by the server.\
